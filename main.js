@@ -4,3 +4,8 @@ if (navigator.serviceWorker) {
         console.log("sw registered");
     })
 }
+fetch('./camera.html').then((res)=>{
+    return res.text()
+}).then((html)=>{
+    document.getElementById('cam').innerHTML=html
+})
