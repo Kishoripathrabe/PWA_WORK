@@ -10,6 +10,7 @@ self.addEventListener("install", (e) => {
         }, 5000)
     })
     e.waitUntil(installPromise);
+    self.skipWaiting()
     console.log("Sw:Install");
 })
 self.addEventListener("activate", (e) => {
