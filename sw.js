@@ -1,3 +1,9 @@
 self.addEventListener('message', (e) => {
-console.log("data",e.data)
+self.clients.matchAll().then((clients)=>{
+    clients.forEach(client => {
+        if(e.source.id===client.id){
+            client.postMessage("Private Hello from Service Worker")
+        }
+    });
+})
 })
